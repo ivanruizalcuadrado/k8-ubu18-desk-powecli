@@ -16,4 +16,5 @@ sudo add-apt-repository universe
 # Install PowerShell
 sudo apt-get install -y powershell
 # Start PowerShell
-# pwsh
+pwsh
+Install-Module -Name VMware.PowerCLI  -Scope allusers
