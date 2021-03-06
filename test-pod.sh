@@ -1,5 +1,7 @@
 #!/bin/bash
-echo "holadesdegiy" > holagit.txt
+
+
+echo "ivanruizalcuadrado/k8-ubu18-desk-powecli" > HolaGithub.txt
 
 # Update the list of packages
 sudo apt-get update
