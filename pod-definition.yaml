@@ -8,4 +8,4 @@ spec:
   containers:
   - image: dorowu/ubuntu-desktop-lxde-vnc:bionic
     name: ubudesk-pcli
-    command: ['sh', '-c', 'ls && echo "hola" > hola.txt && apt-get update -y ; apt-get install git -y && git clone https://github.com/ivanruizalcuadrado/k8-ubu18-desk-powecli.git  && chmod -R 775 /root/k8-ubu18-desk-powecli/ && /root/k8-ubu18-desk-powecli/test-pod.sh &&sleep 3600']
+    command: ['sh', '-c', 'apt-get update -y ; apt-get install git -y && git clone https://github.com/ivanruizalcuadrado/k8-ubu18-desk-powecli.git  && chmod -R 775 /root/k8-ubu18-desk-powecli/ && /root/k8-ubu18-desk-powecli/install-pwsh.sh &&sleep 3600']
