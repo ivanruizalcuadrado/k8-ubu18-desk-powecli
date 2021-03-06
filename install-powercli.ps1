@@ -1,4 +1,4 @@
-write-host "Instalando Modulos para uso de VMWare"
+write-host "Installing modules to powershell"
 Install-Module -Name VMware.PowerCLI  -Scope allusers -Confirm:$false -Force
 Install-Module -Name Posh-SSH   -allowclobber -Scope allusers -Confirm:$false -Force
 Install-Module -Name SqlServer -Scope allusers
