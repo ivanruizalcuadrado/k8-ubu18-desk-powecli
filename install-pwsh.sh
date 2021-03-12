@@ -23,5 +23,6 @@ sudo apt-get update
 sudo add-apt-repository universe
 # Install PowerShell
 sudo apt-get install -y powershell
+echo "POWERSHELL INSTALADO"
 # Start PowerShell and install vmware modules
 pwsh /root/k8-ubu18-desk-powecli/install-powercli.ps1
