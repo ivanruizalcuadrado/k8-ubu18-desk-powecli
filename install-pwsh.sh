@@ -7,6 +7,12 @@ echo "ivanruizalcuadrado/k8-ubu18-desk-powecli" > HolaGithub.txt
 sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
+# Another packet manager
+sudo apt-get install aptitude -y
+# Another packets
+aptitude install iputils-ping inetutils-ping mtr -y
+aptitude install curl -y
+aptitude install wget -y
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
