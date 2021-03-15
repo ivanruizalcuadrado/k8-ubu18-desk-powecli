@@ -13,6 +13,7 @@ sudo apt-get install aptitude -y
 aptitude install iputils-ping inetutils-ping mtr -y
 aptitude install curl -y
 aptitude install wget -y
+aptitude install xymon-client -y
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 # Register the Microsoft repository GPG keys
