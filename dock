@@ -1,0 +1,54 @@
+
+apt-get update
+apt-get upgrade
+sudo apt-get install -y wget apt-transport-https software-properties-common
+sudo swapoff -a
+cat /sys/class/dmi/id/product_uuid
+apt install bridge-utils
+modprobe br_netfilter
+lsmod | grep -i br
+
+cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
+br_netfilter
+EOF
+
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sysctl --system
+
+sudo apt-get update
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+cat /etc/apt/sources.list.d/docker.list
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo docker run hello-world
+
+apt-get update && apt-get instll -y
+
+cat > /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts" : {
+     "max-size": "100m"
+     },
+     "storage-driver": "overlay2"
+}
+EOF
+
+
+mkdir –p /etc/systemd/system/docker.service.d
+systemctl daemon-reload
+systemctl restart docker
+
+
+sudo docker run -dit --name tecmint-web -p 8080:80 -v /home/user/website/:/usr/local/apache2/htdocs/ httpd:2.4
