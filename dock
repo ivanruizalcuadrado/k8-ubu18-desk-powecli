@@ -1,3 +1,4 @@
+#!/bin/bash
 apt-get update && apt-get instll -y
 sudo apt-get install -y wget apt-transport-https software-properties-common
 sudo swapoff -a
