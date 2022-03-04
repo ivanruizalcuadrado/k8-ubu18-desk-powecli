@@ -1,9 +1,14 @@
 # k8-ubu18-desk-powecli
 
-To install run in your master K8:
+This deployment use powershell into PODs.
+There is an auto installtion of powershell, powercli and one listener in a port to receive http petitions.
 
-- Install powershell for linux in nodes.
+Procedure:
 
+- Install powershell for linux in nodes and master
 - kubectl create -f pod-definition.yaml
+
+Order:
+
 
 
