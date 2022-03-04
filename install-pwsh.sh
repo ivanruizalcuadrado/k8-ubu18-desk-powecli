@@ -1,7 +1,11 @@
 #!/bin/bash
 
+#####################
+# Fist script run
+######################
 
-echo "ivanruizalcuadrado/k8-ubu18-desk-powecli" > HolaGithub.txt
+echo "ivanruizalcuadrado/k8-ubu18-desk-powecli" > HelloGithub.txt
+
 
 # Update the list of packages
 sudo apt-get update
@@ -25,7 +29,7 @@ sudo add-apt-repository universe
 # Install PowerShell
 sudo apt-get install -y powershell
 echo "POWERSHELL INSTALADO"
-# Start PowerShell and install vmware modules
+# Start PowerShell and install vmware modules to use powercli
 pwsh /root/k8-ubu18-desk-powecli/install-powercli.ps1
 # Run listener with powershell in POD
 pwsh /root/k8-ubu18-desk-powecli/listener-https.ps1
