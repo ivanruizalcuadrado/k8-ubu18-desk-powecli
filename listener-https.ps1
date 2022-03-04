@@ -1,7 +1,7 @@
 
 $IP = hostname -I | awk '{print $1}'
 $LocalIP = $IP 
-$Puerto =  "30888"
+$Puerto =  "888"
 $URLListener = "http://" + $LocalIP + ":" + $Puerto + "/"
 
 # Crea un  listener en el pueto 8000
