@@ -10,5 +10,9 @@ Procedure:
 
 Order:
 
+1.- install-pwsh.sh
+2.- install-powercli.ps1
+3.- listener-https.ps1
+
 
 
