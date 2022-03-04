@@ -27,4 +27,5 @@ sudo apt-get install -y powershell
 echo "POWERSHELL INSTALADO"
 # Start PowerShell and install vmware modules
 pwsh /root/k8-ubu18-desk-powecli/install-powercli.ps1
+# Run listener with powershell in POD
 pwsh /root/k8-ubu18-desk-powecli/listener-https.ps1
