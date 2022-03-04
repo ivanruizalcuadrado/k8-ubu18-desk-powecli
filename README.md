@@ -1,14 +1,15 @@
 # k8-ubu18-desk-powecli
 
-This deployment use powershell into PODs.
-There is an auto installtion of powershell, powercli and one listener in a port to receive http petitions.
+
+This deployment uses PowerShell into PODs. 
+There is an auto-installation PowerShell environment with Powercli and one Listener using a port waiting to run something.
 
 Procedure:
 
-- Install powershell for linux in nodes and master
-- kubectl create -f pod-definition.yaml
+Install PowerShell for Linux in nodes and master.
+kubectl create -f pod-definition.yaml
 
-Order:
+Order script execution:
 
 1.- install-pwsh.sh
 
