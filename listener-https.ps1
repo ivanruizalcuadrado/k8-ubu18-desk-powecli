@@ -1,7 +1,7 @@
 
 $IP = hostname -I | awk '{print $1}'
 $LocalIP = $IP 
-$Puerto =  "888"
+$Puerto =  "80"
 $URLListener = "http://" + $LocalIP + ":" + $Puerto + "/"
 
 # Crea un  listener en el pueto 8000
@@ -40,83 +40,9 @@ Write-host -Foreground Yello "====================================="
 #######################################################################################################
 #######################################################################################################
                     
-                    # Split request URL to get command and options
-                    $requestvars = ([String]$request.Url).split("/");      
+                    $IP = hostname -I | awk '{print $1}'
+                    $message = "Recibido:" + $IP
 
-#######################################################################################################
-#######################################################################################################
-#######################################################################################################
-                    
-                    
-                    
-
-#############################################################################
-#      _  ___
-# | | |_)  |  
-# |_| | \ _|_ 
-#            
-
-# If a request is sent to http:// :8000/vpn
-                    
-                if ($requestvars[3] -eq "send") {
-                    
-                        # Se le pasa como posiciÃ³n siguiente el nÃºmero de organizcion
-                        # http://10.4.0.44:8888/vpn/XXXXXXX
-
-                       $info= $requestvars[4]
-
-                            if($info -eq $Null){$info = "No has enviado nada"}
-                                
-                                Write-host -ForegroundColor Yellow $info                                
-
-                                $ArrayArgumentos = %{
-                                        " -file /vol-powercli-repository/gitHub-script/departamento/iruiz/listeners/hola-mundo.ps1 "
-                                    $info        
-                                }
-                                
-                                # ########################
-                                # bloque de ejecucion
-                                # ########################
-
-                                # $result = Start-Process pwsh $ArrayArgumentos
-                                [string]$message= [System.Net.Dns]::GetHostName()
-                                $IPContendor = hostname -I | awk '{print $1}'
-
-                                $message = [string]$message +  " " + $IPContendor
-                               
-                                
-
-                                                
-                                    # Convert the returned data to JSON and set the HTTP content type to JSON
-                                    #$message = $result | ConvertTo-Json; 
-                                    #$response.ContentType = 'application/json';
-                                    
-                                $response.ContentType = 'text/html';
-
-
-                                    }elseif($requestvars[3] -eq "XXX"){
-
-                                        HACE OTRA COSA
-
-                                        
-                                    }elseif($requestvars[3] -eq "XXX"){
-
-                                        HACE OTRA COSA
-
-
-                                    }elseif($requestvars[3] -eq "XXX"){
-
-                                        HACE OTRA COSA
-
-                                            } else { 
-                                        
-                                                    # If no matching subdirectory/route is found generate a 404 message
-                                                    $message = "Esta no es la URL que estas buscando"
-                                                    $response.ContentType = 'text/html' ;
-
-
-                            } #   if ($requestvars[3] -eq "send")
-                        
                     
                     # =================================
                     # Convert the data to UTF8 bytes
