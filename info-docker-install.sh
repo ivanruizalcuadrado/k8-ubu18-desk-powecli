@@ -12,6 +12,7 @@ modprobe br-netfilter
 lsmod | grep -i br_netfilter
 apt install bridge-utils
 lsmod | grep -i bridge
+
 # systed options
 cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf
 br_netfilter
@@ -26,7 +27,7 @@ sudo sysctl --system
 vim /etc/sysctl.d/k8s.conf
 sysctl --system
 
-# install dockes
+# install docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 sudo apt-get install moby-engine  moby-cli  moby-container
 sudo docker run hello-world
