@@ -27,6 +27,7 @@ Write-host -Foreground Yello "====================================="
                 # Esto es lo que devuelve el servidor una vez se le hecho una petición web
                 Write-host -ForegroundColor yello "RESPUESTA"
                 $response = $context.Response
+                $response.ContentType = 'text/html';
                 $response
             
                 # Break from loop if GET request sent to /end
